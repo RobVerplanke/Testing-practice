@@ -14,7 +14,12 @@ describe('capitalize', () => {
     const input = 123;
     expect(capitalize(input)).toBe('Not a valid string');
   })
-  
+
+  it('should not change input if it exists of a single capital letter', () => {
+    const input = 'A';
+    expect(capitalize(input)).toBe('A');
+  })
+
   it('should return empty string if input is empty', () => {
     const input = '';
     expect(capitalize(input)).toBe('');
@@ -42,11 +47,6 @@ describe('capitalize', () => {
     expect(result).toBe('Flexible');
   })
 
-  it('should not change input if it exists of a single capital letter', () => {
-    const input = 'A';
-    expect(capitalize(input)).toBe('A');
-  })
-
   it('should return capitalised string that is already capitalized', () => {
     const input = 'Capitalized';
     const result = capitalize(input);
@@ -59,4 +59,3 @@ describe('capitalize', () => {
     expect(result).toBe('This is a sentence.');
     })
 });
-
