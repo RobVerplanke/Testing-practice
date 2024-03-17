@@ -1,5 +1,9 @@
 function reverseString(value){
+
+  // Check if value is of type string
   if (typeof value !== 'string') return 'Not a valid string';
+
+  // Return value if it only contains one character
   if (value.length === 1) return value;
   
   let result = '';

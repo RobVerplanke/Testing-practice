@@ -21,6 +21,11 @@ describe('reverseString', () => {
       expect(reverseString(input)).toBe('Not a valid string');
     })
 
+    it('should reverse string with special characters', () => {
+      const input = '!@#$%^&*()';
+      expect(reverseString(input)).toBe(')(*&^%$#@!');
+    });
+    
     it('should not change input if it exists of a single character', () => {
       const input = 'A';
       expect(reverseString(input)).toBe('A');
@@ -31,8 +36,18 @@ describe('reverseString', () => {
       expect(reverseString(input)).toBe('elpmaxE');
     })
 
-    it('should reverse string with multiple words', () => {
-      const input = 'This is a sentence.';
-      expect(reverseString(input)).toBe('.ecnetnes a si sihT');
-    })
+    it('should reverse string with mixed case', () => {
+      const input = 'eXaMpLe';
+      expect(reverseString(input)).toBe('eLpMaXe');
+    });
+
+    it('should reverse string with a longer input', () => {
+      const input = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      expect(reverseString(input)).toBe('.tile gnicsipida rutetcesnoc ,tema tis rolod muspi meroL');
+    });
+
+    it('should reverse string with leading and trailing spaces', () => {
+      const input = '   Example   ';
+      expect(reverseString(input)).toBe('   elpmaxE   ');
+    });
 })
